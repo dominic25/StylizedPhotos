@@ -10,17 +10,20 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
+
+
 
 import java.io.IOException;
 
 public class FilterChooser extends AppCompatActivity {
 
+    private static final int RESULT_OPEN_FILTER_SCREEN=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.filter_chooser);
+        setContentView(R.layout.activity_filter_chooser);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -31,5 +34,14 @@ public class FilterChooser extends AppCompatActivity {
         ImageView image = (ImageView) findViewById(R.id.imageViewFilter);
 
         image.setImageBitmap(bmp);
+
+         Button FilterButton = (Button) findViewById(R.id.button1);
+        FilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), FilterScreen.class);
+                startActivityForResult(intent, RESULT_OPEN_FILTER_SCREEN);
+            }
+        });
+
     }
 }

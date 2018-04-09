@@ -24,7 +24,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
     ImageButton image;
     private int PICK_IMAGE_REQUEST = 1;
-    static final int REQUEST_IMAGE_CAPTURE = 0;
+    private static final int REQUEST_IMAGE_CAPTURE = 0;
     private static int RESULT_LOAD_IMAGE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
